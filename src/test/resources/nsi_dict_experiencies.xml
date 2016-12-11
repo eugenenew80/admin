@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_experience id="1"   exp_type_id="1" order_number="1"  name_ru="До года" name_kz="До года" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="2"   exp_type_id="1" order_number="2"  name_ru="с 1 до 2" name_kz="с 1 до 2" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="3"   exp_type_id="1" order_number="3"  name_ru="с 2 до 3" name_kz="с 2 до 3" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="4"   exp_type_id="1" order_number="4"  name_ru="с 3 до 5" name_kz="с 3 до 5" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="5"   exp_type_id="1" order_number="5"  name_ru="с 5 до 7" name_kz="с 5 до 7" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="6"   exp_type_id="1" order_number="6"  name_ru="с 7 до 9" name_kz="с 7 до 9" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="7"   exp_type_id="1" order_number="7"  name_ru="с 9 до 11" name_kz="с 9 до 11" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="8"   exp_type_id="1" order_number="8"  name_ru="с 11 до 14" name_kz="с 11 до 14" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="9"   exp_type_id="1" order_number="9"  name_ru="с 14 до 17" name_kz="с 14 до 17" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="10"  exp_type_id="1" order_number="10" name_ru="с 17 до 20" name_kz="с 17 до 20" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="11"  exp_type_id="1" order_number="11" name_ru="свыше 20 лет" name_kz="свыше 20 лет" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="12"  exp_type_id="3" order_number="1"  name_ru="0 - 1" name_kz="0 - 1" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="13"  exp_type_id="3" order_number="2"  name_ru="1 - 2" name_kz="1 - 2" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="14"  exp_type_id="3" order_number="3"  name_ru="2 - 3" name_kz="2 - 3" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="15"  exp_type_id="3" order_number="4"  name_ru="3 - 5" name_kz="3 - 5" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="16"  exp_type_id="3" order_number="5"  name_ru="5 - 7" name_kz="5 - 7" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="17"  exp_type_id="3" order_number="6"  name_ru="7 - 10" name_kz="7 - 10" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="18"  exp_type_id="3" order_number="7"  name_ru="10 - 13" name_kz="10 - 13" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="19"  exp_type_id="3" order_number="8"  name_ru="13 - 16" name_kz="13 - 16" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="20"  exp_type_id="3" order_number="9"  name_ru="16 - 20" name_kz="16 - 20" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="21"  exp_type_id="3" order_number="10" name_ru="20 - 25" name_kz="20 - 25" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="22"  exp_type_id="3" order_number="11" name_ru="Свыше 25 лет" name_kz="Свыше 25 лет" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="23"  exp_type_id="2" order_number="1"  name_ru="0 - 3" name_kz="0 - 3" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="24"  exp_type_id="2" order_number="2"  name_ru="3 - 6" name_kz="3 - 6" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="25"  exp_type_id="2" order_number="3"  name_ru="6 - 9" name_kz="6 - 9" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="26"  exp_type_id="2" order_number="4"  name_ru="9 - 12" name_kz="9 - 12" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="27"  exp_type_id="2" order_number="5"  name_ru="12 - 16" name_kz="12 - 16" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="28"  exp_type_id="2" order_number="6"  name_ru="16 - 20" name_kz="16 - 20" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="29"  exp_type_id="2" order_number="7"  name_ru="20 - 25" name_kz="20 - 25" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_experience id="30"  exp_type_id="2" order_number="8"  name_ru="Свыше 25" name_kz="Свыше 25" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+</dataset>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_budget_request_type id="1" name_ru="Тип бюджета 1" name_kz="Тип бюджета 1" code="01" begin_date="2016-01-01" end_date="2016-12-31" create_date="2016-12-31" last_update_date="2016-12-31" />
+	<nsi_dict_budget_request_type id="2" name_ru="Тип бюджета 2" name_kz="Тип бюджета 2" code="02" begin_date="2017-01-01" end_date="2017-12-31" create_date="2016-12-31" last_update_date="2016-12-31" />
+</dataset>

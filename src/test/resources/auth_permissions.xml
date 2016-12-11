@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<auth_permissions id="1" code="01" name_ru="Полномочие 1" name_kz="Полномочие 1" is_archive="0" is_disabled="0" create_date="2016-12-31" update_date="2016-12-31" />
+	<auth_permissions id="2" code="02" name_ru="Полномочие 2" name_kz="Полномочие 2" is_archive="0" is_disabled="0" create_date="2016-12-31" update_date="2016-12-31" />
+</dataset>

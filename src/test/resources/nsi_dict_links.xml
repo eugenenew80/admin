@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_link id="1" value="A1" exp_type="2" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_link id="2" value="B1" exp_type="3" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_link id="3" value="B2" exp_type="3" scope_id="1" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_link id="4" value="B2" exp_type="3" scope_id="2" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_link id="5" value="B3" exp_type="3" scope_id="3" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_link id="6" value="C1" exp_type="3" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+</dataset>

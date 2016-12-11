@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_exp_coef id="1"  position_id="1" experience_id="1"  kat_id="2" coef_value="2.74" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="2"  position_id="1" experience_id="2"  kat_id="2" coef_value="2.88" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="3"  position_id="1" experience_id="3"  kat_id="2" coef_value="3.01" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="4"  position_id="1" experience_id="4"  kat_id="2" coef_value="3.15" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="5"  position_id="1" experience_id="5"  kat_id="2" coef_value="3.29" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="6"  position_id="1" experience_id="6"  kat_id="2" coef_value="3.37" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="7"  position_id="1" experience_id="7"  kat_id="2" coef_value="3.45" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="8"  position_id="1" experience_id="8"  kat_id="2" coef_value="3.53" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="9"  position_id="1" experience_id="9"  kat_id="2" coef_value="3.62" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="10" position_id="1" experience_id="10" kat_id="2" coef_value="3.64" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="11" position_id="1" experience_id="11" kat_id="2" coef_value="3.7"  begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="12" position_id="6" experience_id="23" link_id="1" step_id="1" coef_value="5.84" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="13" position_id="6" experience_id="24" link_id="1" step_id="1" coef_value="6" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="14" position_id="6" experience_id="25" link_id="1" step_id="1" coef_value="6.17" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="15" position_id="6" experience_id="26" link_id="1" step_id="1" coef_value="6.34" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="16" position_id="6" experience_id="27" link_id="1" step_id="1" coef_value="6.52" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="17" position_id="6" experience_id="28" link_id="1" step_id="1" coef_value="6.7" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="18" position_id="6" experience_id="29" link_id="1" step_id="1" coef_value="6.89" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="19" position_id="6" experience_id="30" link_id="1" step_id="1" coef_value="7.08" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="20" position_id="8" experience_id="12" link_id="6" coef_value="3.39" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="21" position_id="8" experience_id="13" link_id="6" coef_value="3.47" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="22" position_id="8" experience_id="14" link_id="6" coef_value="3.55" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="23" position_id="8" experience_id="15" link_id="6" coef_value="3.63" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="24" position_id="8" experience_id="16" link_id="6" coef_value="3.71" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="25" position_id="8" experience_id="17" link_id="6" coef_value="3.8"  begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="26" position_id="8" experience_id="18" link_id="6" coef_value="3.89" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="27" position_id="8" experience_id="19" link_id="6" coef_value="3.98" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="28" position_id="8" experience_id="20" link_id="6" coef_value="4.07" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="29" position_id="8" experience_id="21" link_id="6" coef_value="4.16" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_exp_coef id="30" position_id="8" experience_id="22" link_id="6" coef_value="4.26" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+</dataset>

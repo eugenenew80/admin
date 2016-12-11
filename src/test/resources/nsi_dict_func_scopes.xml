@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_func_scope id="1" name_ru="Образование" name_kz="Образование" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="2" name_ru="Здравоохранение" name_kz="Здравоохранение" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="3" name_ru="Прочие сферы" name_kz="Прочие сферы" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />	
+</dataset>

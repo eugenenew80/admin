@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+  <mapping>
+    <class-a>kz.ecc.isbp.admin.nsi.entity.BudgetVer</class-a>
+    <class-b>kz.ecc.isbp.admin.nsi.dto.BudgetVerDto</class-b>
+
+      <field>
+        <a>budgetType.id</a>
+        <b>budgetTypeId</b>
+      </field>
+      <field>
+        <a>budgetType.nameRu</a>
+        <b>budgetTypeNameRu</b>
+      </field>
+      <field>
+        <a>budgetType.nameKz</a>
+        <b>budgetTypeNameKz</b>
+      </field>
+
+      <field>
+        <a>budgetRequestType.id</a>
+        <b>budgetRequestTypeId</b>
+      </field>
+      <field>
+        <a>budgetRequestType.nameRu</a>
+        <b>budgetRequestTypeNameRu</b>
+      </field>
+      <field>
+        <a>budgetRequestType.nameKz</a>
+        <b>budgetRequestTypeNameKz</b>
+      </field>
+
+      <field>
+        <a>budgetVerStatus.id</a>
+        <b>budgetVerStatusId</b>
+      </field>
+      <field>
+        <a>budgetVerStatus.nameRu</a>
+        <b>budgetVerStatusNameRu</b>
+      </field>
+      <field>
+        <a>budgetVerStatus.nameKz</a>
+        <b>budgetVerStatusNameKz</b>
+      </field>
+
+      <field>
+        <a>beginFinYear.id</a>
+        <b>beginFinYearId</b>
+      </field>      
+      <field>
+        <a>beginFinYear.year</a>
+        <b>beginFinYearValue</b>
+      </field>
+                                                    
+      <field>
+        <a>endFinYear.id</a>
+        <b>endFinYearId</b>
+      </field>      
+      <field>
+        <a>endFinYear.year</a>
+        <b>endFinYearValue</b>
+      </field>
+  </mapping> 
+</mappings> 

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    <changeSet id="44" author="eugene" context="postgres">        
+        <comment>Creating auth_role_module_level table</comment>
+        
+        <createTable tableName="auth_role_module_level" schemaName="auth">
+            <column name="id" type="number">
+                <constraints nullable="false"/>
+            </column>
+                        
+            <column name="id_role" type="number">
+                <constraints nullable="false"/>
+            </column>        
+            
+            <column name="id_module" type="number">
+                <constraints nullable="false"/>
+            </column>                                         
+
+            <column name="id_level" type="number">
+                <constraints nullable="true"/>
+            </column>                                               
+        </createTable>
+        
+    </changeSet>
+
+	<changeSet id="45" author="eugene" context="postgres"> 
+	    <comment>Creating primary key for auth_role_module_level table</comment>
+	    <addPrimaryKey 
+	            columnNames="id"
+	            constraintName="pk_auth_role_module_level"
+	            schemaName="auth"
+	            tableName="auth_role_module_level"/>
+	</changeSet>
+	
+	<changeSet id="46" author="eugene" context="postgres">
+	    <comment>Add foreign key for auth_role_module_level to auth_roles</comment>
+	    <addForeignKeyConstraint 
+	            baseColumnNames="id_role"
+	            baseTableName="auth_role_module_level" 
+	            baseTableSchemaName="auth" 
+
+	    		referencedColumnNames="id"
+	            referencedTableName="auth_roles"
+	            referencedTableSchemaName="auth"
+	            
+	            constraintName="fk_role_module_level_roles"
+	            onDelete="CASCADE"
+	            onUpdate="RESTRICT"/>
+	</changeSet>	
+	
+	<changeSet id="47" author="eugene" context="postgres">
+	    <comment>Add foreign key for auth_role_module_level to fnd_modules</comment>
+	    <addForeignKeyConstraint 
+	            baseColumnNames="id_module"
+	            baseTableName="auth_role_module_level" 
+	            baseTableSchemaName="auth" 
+
+	    		referencedColumnNames="id"
+	            referencedTableName="fnd_modules"
+	            referencedTableSchemaName="fnd"
+	            
+	            constraintName="fk_role_module_level_modules"
+	            onDelete="CASCADE"
+	            onUpdate="RESTRICT"/>
+	</changeSet>
+	
+	
+    <changeSet id="48" author="eugene" context="postgres">        
+        <comment>Creating auth_user_roles_rel table</comment>
+        <createTable tableName="auth_user_roles_rel" schemaName="auth">            
+            <column name="id_role_module_level" type="number">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="id_user" type="number">
+                <constraints nullable="false"/>
+            </column>                                         
+        </createTable>
+    </changeSet>
+
+	<changeSet id="49" author="eugene" context="postgres"> 
+	    <comment>Creating primary key for auth_user_dicts_rel table</comment>
+	    <addPrimaryKey 
+	            columnNames="id_role_module_level, id_user"
+	            constraintName="pk_auth_user_roles_rel"
+	            schemaName="auth"
+	            tableName="auth_user_roles_rel"/>
+	</changeSet>		
+	
+	
+	<changeSet id="50" author="eugene" context="postgres">
+	    <comment>Add foreign key for auth_user_roles_rel to auth_role_module_level</comment>
+	    <addForeignKeyConstraint 
+	            baseColumnNames="id_role_module_level"
+	            baseTableName="auth_user_roles_rel" 
+	            baseTableSchemaName="auth" 
+
+	    		referencedColumnNames="id"
+	            referencedTableName="auth_role_module_level"
+	            referencedTableSchemaName="auth"
+	            
+	            constraintName="fk_user_roles_role_module_level"
+	            onDelete="CASCADE"
+	            onUpdate="RESTRICT"/>
+	</changeSet>
+
+	<changeSet id="51" author="eugene" context="postgres">
+	    <comment>Add foreign key for auth_user_roles_rel to auth_usesr</comment>
+	    <addForeignKeyConstraint 
+	            baseColumnNames="id_user"
+	            baseTableName="auth_user_roles_rel" 
+	            baseTableSchemaName="auth" 
+
+	    		referencedColumnNames="id"
+	            referencedTableName="auth_users"
+	            referencedTableSchemaName="auth"
+	            
+	            constraintName="fk_user_roles_users"
+	            onDelete="CASCADE"
+	            onUpdate="RESTRICT"/>
+	</changeSet>	
+	
+	<changeSet id="52" author="eugene" context="postgres">
+	    <comment>Creating sequence for auth_role_module_level table</comment>
+	    <createSequence 
+	            incrementBy="1"
+	            schemaName="auth"
+	            sequenceName="auth_role_module_level_s"
+	            startValue="1"/>
+	</changeSet>		
+</databaseChangeLog>

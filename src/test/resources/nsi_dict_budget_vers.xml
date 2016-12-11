@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_budget_ver id="1" name_ru="Версия бюджета 1" name_kz="Версия бюджета 1" short_name_ru="Версия 1" short_name_kz="Версия 1" begin_year_id="1" end_year_id="2" begin_date="2016-01-01" end_date="2017-12-31" status_id="1" budget_type_id="1" budget_request_type_id="1" create_date="2016-12-31" last_update_date="2016-12-31" />
+	<nsi_dict_budget_ver id="2" name_ru="Версия бюджета 2" name_kz="Версия бюджета 2" short_name_ru="Версия 2" short_name_kz="Версия 2" begin_year_id="1" end_year_id="2" begin_date="2016-01-01" end_date="2017-12-31" status_id="1" budget_type_id="1" budget_request_type_id="1" parent_id="1" create_date="2016-12-31" last_update_date="2016-12-31" />
+</dataset>

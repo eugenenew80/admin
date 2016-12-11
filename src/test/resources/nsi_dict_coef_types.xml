@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_func_scope id="1" name_ru="Поправочный коэффициент" name_kz="Поправочный коэффициент" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="2" name_ru="Коэффициент по кодам должности и стажу" name_kz="Коэффициент по кодам должности и стажу" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="3" name_ru="Повышающий коэффициент" name_kz="Повышающий коэффициент" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="4" name_ru="Коэффициент за проживание на территориях радиационного риска" name_kz="Коэффициент за проживание на территориях радиационного риска" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="5" name_ru="Коэффициент за проживание в зонах экологического бедствия" name_kz="Коэффициент за проживание в зонах экологического бедствия" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="6" name_ru="Коэффициент инфляции" name_kz="Коэффициент инфляции" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="7" name_ru="Коэффициент для исчисления доплаты за классный чин по воинским званиям" name_kz="Коэффициент для исчисления доплаты за классный чин по воинским званиям" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="8" name_ru="Коэффициент для исчисления оклада по воинским званиям" name_kz="Коэффициент для исчисления оклада по воинским званиям" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="9" name_ru="Коэффициент для исчисления доплаты за специальные звания по воинским званиям" name_kz="Коэффициент для исчисления доплаты за специальные звания по воинским званиям" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="10" name_ru=" Базовая страховая премия" name_kz=" Базовая страховая премия" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_func_scope id="11" name_ru="Коэффициент в зависимости от возраста и стажа вождения для ЮЛ" name_kz="Коэффициент в зависимости от возраста и стажа вождения для ЮЛ" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+</dataset>
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_fin_year id="1" year="2016" begin_date="2016-01-01" end_date="2016-12-31" create_date="2016-12-31" last_update_date="2016-12-31" />
+	<nsi_dict_fin_year id="2" year="2017" begin_date="2017-01-01" end_date="2017-12-31" create_date="2016-12-31" last_update_date="2016-12-31" />
+</dataset>

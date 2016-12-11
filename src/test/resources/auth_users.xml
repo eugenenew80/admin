@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<auth_users id="1" surname="Иванов" name="Иван" email="ivanov@gmail.com" iin="111111111111" bin="222222222222"  id_org_struct="1" is_archive="0" is_disabled="0" is_director="0" create_date="2016-12-31" update_date="2016-12-31" />
+	<auth_users id="2" surname="Петров" name="Петр" email="petrov@gmail.com" iin="111111111112" bin="222222222223"  id_org_struct="1" is_archive="0" is_disabled="0" is_director="0" create_date="2016-12-31" update_date="2016-12-31" />
+</dataset>

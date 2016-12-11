@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    <changeSet id="21" author="eugene" context="postgres">        
+        <comment>Creating auth_user_modules_rel table</comment>
+        <createTable tableName="auth_user_modules_rel" schemaName="auth">            
+            <column name="id_user" type="number">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="id_module" type="number">
+                <constraints nullable="false"/>
+            </column>                                         
+        </createTable>
+    </changeSet>
+
+	<changeSet id="22" author="eugene" context="postgres"> 
+	    <comment>Creating primary key for auth_user_modules_rel table</comment>
+	    <addPrimaryKey 
+	            columnNames="id_user, id_module"
+	            constraintName="pk_auth_user_modules_rel"
+	            schemaName="auth"
+	            tableName="auth_user_modules_rel"/>
+	</changeSet>
+</databaseChangeLog>

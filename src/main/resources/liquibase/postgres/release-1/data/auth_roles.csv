@@ -1,0 +1,3 @@
+﻿id;name_kz;name_ru;code;create_date;update_date;is_archive;is_disabled
+1;'Эксперт';'Эксперт';'01';'2016-01-11';''2016-01-11'';false;false
+2;'Эксперт';'Главный эксперт';'02';'2016-01-11';''2016-01-11'';false;false

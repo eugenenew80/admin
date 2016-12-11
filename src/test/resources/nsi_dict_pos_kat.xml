@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_pos_kat id="1" kat="A"   kat_type="1" exp_type="1" order_number="1" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_pos_kat id="2" kat="C-1" kat_type="2" exp_type="1" order_number="1" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />	
+</dataset>

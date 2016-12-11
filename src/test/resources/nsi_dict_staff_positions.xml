@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<nsi_dict_staff_positions id="1" id_admin="217" id_position_kat="2"  name_ru="Директор департамента" name_kz="Директор департамента" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_staff_positions id="2" id_admin="217" id_position_kat="18" name_ru="Заместитель председателя" name_kz="Заместитель председателя" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_staff_positions id="3" id_admin="217" id_position_kat="19" name_ru="Директор департамента" name_kz="Директор департамента" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_staff_positions id="4" id_admin="217" name_ru="Министр Республики Казахстан" name_kz="Министр Республики Казахстан" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_staff_positions id="5" id_admin="217" id_position_kat="11" name_ru="Первый заместитель министра Республики Казахстан" name_kz="Первый заместитель министра Республики Казахстан" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_staff_positions id="6" id_admin="217" id_link="1" id_step="1" name_ru="Руководитель государственного учреждения Байконырбаланс" name_kz="Руководитель государственного учреждения Байконырбаланс" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_staff_positions id="7" id_admin="217" id_link="1" id_step="2" name_ru="Заместитель руководителя государственного учреждения Байконырбаланс" name_kz="Заместитель руководителя государственного учреждения Байконырбаланс" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+	<nsi_dict_staff_positions id="8" id_admin="217" id_link="6" name_ru="Заведующий хозяйственным подразделением: складом" name_kz="Заведующий хозяйственным подразделением: складом" begin_date="2016-01-01" end_date="2050-12-31" create_date="2016-01-01" update_date="2016-01-01" />
+</dataset>

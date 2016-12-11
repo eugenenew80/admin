@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+  <mapping>
+    <class-a>kz.ecc.isbp.admin.auth.entity.RoleModule</class-a>
+    <class-b>kz.ecc.isbp.admin.auth.dto.RoleModuleDto</class-b>
+
+      <field>
+        <a>role.id</a>
+        <b>roleId</b>
+      </field>
+      <field>
+        <a>role.nameRu</a>
+        <b>roleNameRu</b>
+      </field>
+      <field>
+        <a>role.nameKz</a>
+        <b>roleNameKz</b>
+      </field>
+
+      <field>
+        <a>module.id</a>
+        <b>moduleId</b>
+      </field>
+      
+      <field type="one-way">
+        <a>levelNameRu</a>
+        <b>levelNameRu</b>
+      </field>
+      <field type="one-way">
+        <a>levelNameKz</a>
+        <b>levelNameKz</b>
+      </field>            
+  </mapping>  
+</mappings> 

@@ -1,0 +1,4 @@
+id;iin;bin;surname;name;patronymic;phone_number;email;is_director;is_archive;is_disabled;id_org_struct;create_date;update_date
+1;'111111111111';'222222222222';'Иванов';'Иван';'Иванович';'111-222';'ivanov@gmail.com';false;false;false;1;'2016-01-11';'2016-01-11'
+2;'222222222222';'111111111111';'Петров';'Петр';'Петрович';'222-333';'petrov@gmail.com';false;false;false;1;'2016-01-11';'2016-01-11'
+3;'333333333333';'444444444444';'Сидоров';'Владимир';'Владимирович';'333-444';'sidorov@gmail.com';false;false;false;2;'2016-01-11';'2016-01-11'

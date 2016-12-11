@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    <changeSet id="104" author="eugene" context="postgres">        
+        <comment>Creating nsi_dict_staff_positions table</comment>
+        <createTable tableName="nsi_dict_staff_positions" schemaName="nsi">            
+            <column name="id" type="number">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="name_kz" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="name_ru" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+			
+			<column name="id_admin" type="number">
+                <constraints nullable="false"/>
+            </column>			
+
+			<column name="id_exp_type" type="number" />
+			<column name="id_position_kat" type="number" />
+			<column name="id_link" type="number" />
+			<column name="id_step" type="number" />
+
+            <column name="begin_date" type="date">
+                <constraints nullable="false"/>
+            </column>   
+                       
+            <column name="end_date" type="date">
+                <constraints nullable="false"/>
+            </column>   
+
+            <column name="create_date" type="date" />
+            <column name="last_update_date" type="date" />
+            <column name="create_by" type="number" />
+            <column name="last_update_by" type="number" />
+        </createTable>
+    </changeSet>
+
+	<changeSet id="105" author="eugene" context="postgres"> 
+	    <comment>Creating primary key for nsi_dict_staff_positions table</comment>
+	    <addPrimaryKey 
+	            columnNames="id"
+	            constraintName="pk_nsi_dict_staff_positions"
+	            schemaName="nsi"
+	            tableName="nsi_dict_staff_positions"/>
+	</changeSet>
+	
+	<changeSet id="106" author="eugene" context="postgres">
+		<comment>Load demo data to nsi_dict_staff_positions table</comment>
+	    <loadData
+	            encoding="UTF-8"
+	            file="/src/main/resources/liquibase/postgres/release-1/data/nsi_dict_staff_positions.csv"
+	            quotchar="'"
+	            schemaName="nsi"
+	            separator=";"
+	            tableName="nsi_dict_staff_positions">
+	        
+	        <column name="id" type="NUMERIC"/>
+	        <column name="id_admin" type="NUMERIC"/>
+	        <column name="id_exp_type" type="NUMERIC"/>
+	        <column name="id_position_kat" type="NUMERIC"/>
+	        <column name="id_link" type="NUMERIC"/>
+	        <column name="id_step" type="NUMERIC"/>
+	        <column name="name_kz" type="STRING"/>
+	        <column name="name_ru" type="STRING"/>
+	        <column name="begin_date" type="DATE"/>
+	        <column name="end_date" type="DATE"/>
+	        <column name="create_date" type="DATE"/>
+	        <column name="last_update_date" type="DATE"/>
+	    </loadData>
+		
+		<rollback>
+        	<delete schemaName="nsi" tableName="nsi_dict_staff_positions" />
+        </rollback>	
+	</changeSet>
+	
+	<changeSet id="107" author="eugene" context="postgres">
+	    <comment>Creating sequence for nsi_dict_staff_positions table</comment>
+	    <createSequence 
+	            incrementBy="1"
+	            schemaName="nsi"
+	            sequenceName="nsi_dict_staff_positions_s"
+	            startValue="9"/>
+	</changeSet>	
+</databaseChangeLog>

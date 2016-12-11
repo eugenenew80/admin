@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    <changeSet id="132" author="eugene" context="postgres">        
+        <comment>Creating emf_gu table</comment>
+        <createTable tableName="emf_gu" schemaName="emf">            
+            <column name="id" type="number">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="name_ru" type="varchar(400)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="name_kz" type="varchar(400)">
+                <constraints nullable="false"/>
+            </column>
+                                            
+            <column name="short_name_ru" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="short_name_kz" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="code_gu" type="varchar(7)" />
+            <column name="code_abp" type="varchar(3)" />
+            <column name="bin" type="varchar(12)" />
+            <column name="rnn" type="varchar(12)" />
+                                                
+            <column name="begin_date" type="date">
+                <constraints nullable="false"/>
+            </column>   
+                       
+            <column name="end_date" type="date">
+                <constraints nullable="false"/>
+            </column>   
+
+            <column name="create_date" type="date" />
+            <column name="last_update_date" type="date" />
+            <column name="create_by" type="number" />
+            <column name="last_update_by" type="number" />
+        </createTable>
+    </changeSet>
+
+	<changeSet id="133" author="eugene" context="postgres"> 
+	    <comment>Creating primary key for emf_gu table</comment>
+	    <addPrimaryKey 
+	            columnNames="id"
+	            constraintName="pk_emf_gu"
+	            schemaName="emf"
+	            tableName="emf_gu"/>
+	</changeSet>
+	
+	<changeSet id="134" author="eugene" context="postgres">
+		<comment>Load demo data to emf_gu table</comment>
+	    <loadData
+	            encoding="UTF-8"
+	            file="/src/main/resources/liquibase/postgres/release-1/data/emf_gus.csv"
+	            quotchar="'"
+	            schemaName="emf"
+	            separator=";"
+	            tableName="emf_gu">
+	        
+	        <column name="id" type="NUMERIC"/>
+	        <column name="name_ru" type="STRING"/>
+	        <column name="name_kz" type="STRING"/>
+	        <column name="short_name_ru" type="STRING"/>
+	        <column name="short_name_kz" type="STRING"/>	        
+	        <column name="code_gu" type="STRING"/>
+	        <column name="code_abp" type="STRING"/>
+	        <column name="bin" type="STRING"/>
+	        <column name="rnn" type="STRING"/>	        
+	        <column name="begin_date" type="DATE"/>
+	        <column name="end_date" type="DATE"/>
+	        <column name="create_date" type="DATE"/>
+	        <column name="last_update_date" type="DATE"/>
+	    </loadData>
+		
+		<rollback>
+        	<delete schemaName="emf" tableName="emf_gu" />
+        </rollback>	
+	</changeSet>
+	
+	<changeSet id="135" author="eugene" context="postgres">
+	    <comment>Creating sequence for emf_gu table</comment>
+	    <createSequence 
+	            incrementBy="1"
+	            schemaName="emf"
+	            sequenceName="emf_gu_s"
+	            startValue="4"/>
+	</changeSet>	
+</databaseChangeLog>

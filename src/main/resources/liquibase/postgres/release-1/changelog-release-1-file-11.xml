@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+		<changeSet id="27" author="eugene" context="postgres">
+		    <comment>Creating sequence for auth_users table</comment>
+		    <createSequence 
+		            incrementBy="1"
+		            schemaName="auth"
+		            sequenceName="auth_users_s"
+		            startValue="4"/>
+		</changeSet>
+		
+		<changeSet id="28" author="eugene" context="postgres">
+		    <comment>Creating sequence for auth_roles table</comment>
+		    <createSequence 
+		            incrementBy="1"
+		            schemaName="auth"
+		            sequenceName="auth_roles_s"
+		            startValue="3"/>
+		</changeSet>	
+		
+		<changeSet id="29" author="eugene" context="postgres">
+		    <comment>Creating sequence for auth_permissions table</comment>
+		    <createSequence 
+		            incrementBy="1"
+		            schemaName="auth"
+		            sequenceName="auth_permissions_s"
+		            startValue="13"/>
+		</changeSet>		
+		
+		<changeSet id="30" author="eugene" context="postgres">
+		    <comment>Creating sequence for fnd_departments table</comment>
+		    <createSequence 
+		            incrementBy="1"
+		            schemaName="fnd"
+		            sequenceName="fnd_dicts_s"
+		            startValue="5"/>
+		</changeSet>	
+		
+		<changeSet id="31" author="eugene" context="postgres">
+		    <comment>Creating sequence for fnd_modules table</comment>
+		    <createSequence 
+		            incrementBy="1"
+		            schemaName="fnd"
+		            sequenceName="fnd_modules_s"
+		            startValue="10"/>
+		</changeSet>
+							
+		<changeSet id="32" author="eugene" context="postgres">
+		    <comment>Creating sequence for nsi_dict_org_struct table</comment>
+		    <createSequence 
+		            incrementBy="1"
+		            schemaName="nsi"
+		            sequenceName="nsi_dict_org_struct_s"
+		            startValue="5"/>
+		</changeSet>
+
+		<changeSet id="33" author="eugene" context="postgres">
+		    <comment>Creating sequence for auth_role_module_level_dict table</comment>
+		    <createSequence 
+		            incrementBy="1"
+		            schemaName="auth"
+		            sequenceName="auth_role_module_level_dict_s"
+		            startValue="1"/>
+		</changeSet>					
+</databaseChangeLog>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+		<changeSet id="34" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_users to nsi_dict_org_struct</comment>
+		    <addForeignKeyConstraint 
+		    		baseColumnNames="id_org_struct"
+		            baseTableName="auth_users"
+		            baseTableSchemaName="auth"
+
+		            referencedColumnNames="id"
+		            referencedTableName="nsi_dict_org_struct" 
+		            referencedTableSchemaName="nsi" 
+		            
+		            constraintName="fk_users_org_structs"
+		            onDelete="RESTRICT"
+		            onUpdate="RESTRICT"/>
+		</changeSet>
+				
+		<changeSet id="35" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_role_module_level_dict to fnd_dicts</comment>
+		    <addForeignKeyConstraint 
+		            baseColumnNames="id_dict"
+		            baseTableName="auth_role_module_level_dict" 
+		            baseTableSchemaName="auth" 
+		            
+		    		referencedColumnNames="id"
+		            referencedTableName="fnd_dicts"
+		            referencedTableSchemaName="fnd"
+		            
+		            constraintName="fk_auth_role_module_level_dict_dicts"
+		            onDelete="CASCADE"
+		            onUpdate="RESTRICT"/>
+		</changeSet>
+		
+		<changeSet id="36" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_role_module_level_dict to auth_roles</comment>
+		    <addForeignKeyConstraint 
+		            baseColumnNames="id_role"
+		            baseTableName="auth_role_module_level_dict" 
+		            baseTableSchemaName="auth" 
+
+		    		referencedColumnNames="id"
+		            referencedTableName="auth_roles"
+		            referencedTableSchemaName="auth"
+		            
+		            constraintName="fk_auth_role_module_level_dict_roles"
+		            onDelete="CASCADE"
+		            onUpdate="RESTRICT"/>
+		</changeSet>	
+		
+		<changeSet id="37" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_role_module_level_dict to fnd_modules</comment>
+		    <addForeignKeyConstraint 
+		            baseColumnNames="id_module"
+		            baseTableName="auth_role_module_level_dict" 
+		            baseTableSchemaName="auth" 
+
+		    		referencedColumnNames="id"
+		            referencedTableName="fnd_modules"
+		            referencedTableSchemaName="fnd"
+		            
+		            constraintName="fk_auth_role_module_level_dict_modules"
+		            onDelete="CASCADE"
+		            onUpdate="RESTRICT"/>
+		</changeSet>					
+		
+		
+		<changeSet id="38" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_user_modules_rel to auth_users</comment>
+		    <addForeignKeyConstraint 
+		            baseColumnNames="id_user"
+		            baseTableName="auth_user_modules_rel" 
+		            baseTableSchemaName="auth" 
+
+		    		referencedColumnNames="id"
+		            referencedTableName="auth_users"
+		            referencedTableSchemaName="auth"
+		            
+		            constraintName="fk_user_modules_users"
+		            onDelete="CASCADE"
+		            onUpdate="RESTRICT"/>
+		</changeSet>	
+
+		
+		<changeSet id="39" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_user_modules_rel to fnd_modules</comment>
+		    <addForeignKeyConstraint 
+		            baseColumnNames="id_module"
+		            baseTableName="auth_user_modules_rel" 
+		            baseTableSchemaName="auth" 
+
+		    		referencedColumnNames="id"
+		            referencedTableName="fnd_modules"
+		            referencedTableSchemaName="fnd"
+		            
+		            constraintName="fk_user_modules_modules"
+		            onDelete="CASCADE"
+		            onUpdate="RESTRICT"/>
+		</changeSet>
+		
+		
+		<changeSet id="40" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_user_dicts_rel to auth_role_module_level_dict</comment>
+		    <addForeignKeyConstraint 
+		            baseColumnNames="id_role_module_level_dict"
+		            baseTableName="auth_user_dicts_rel" 
+		            baseTableSchemaName="auth" 
+
+		    		referencedColumnNames="id"
+		            referencedTableName="auth_role_module_level_dict"
+		            referencedTableSchemaName="auth"
+		            
+		            constraintName="fk_user_dicts_role_module_level_dict"
+		            onDelete="CASCADE"
+		            onUpdate="RESTRICT"/>
+		</changeSet>
+
+		<changeSet id="41" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_user_dicts_rel to auth_users</comment>
+		    <addForeignKeyConstraint 
+		            baseColumnNames="id_user"
+		            baseTableName="auth_user_dicts_rel" 
+		            baseTableSchemaName="auth" 
+
+		    		referencedColumnNames="id"
+		            referencedTableName="auth_users"
+		            referencedTableSchemaName="auth"
+		            
+		            constraintName="fk_user_dicts_users"
+		            onDelete="CASCADE"
+		            onUpdate="RESTRICT"/>
+		</changeSet>								
+		
+		
+		
+		<changeSet id="42" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_role_permissions_rel to auth_roles</comment>
+		    <addForeignKeyConstraint 
+		            baseColumnNames="id_role"
+		            baseTableName="auth_role_permissions_rel" 
+		            baseTableSchemaName="auth" 
+
+		    		referencedColumnNames="id"
+		            referencedTableName="auth_roles"
+		            referencedTableSchemaName="auth"
+		            
+		            constraintName="fk_role_permissions_roles"
+		            onDelete="CASCADE"
+		            onUpdate="RESTRICT"/>
+		</changeSet>				
+				
+		<changeSet id="43" author="eugene" context="postgres">
+		    <comment>Add foreign key for auth_role_permissions_rel to auth_permissions</comment>
+		    <addForeignKeyConstraint 
+		            baseColumnNames="id_permission"
+		            baseTableName="auth_role_permissions_rel" 
+		            baseTableSchemaName="auth" 
+
+		    		referencedColumnNames="id"
+		            referencedTableName="auth_permissions"
+		            referencedTableSchemaName="auth"
+		            
+		            constraintName="fk_role_permissions_permissions"
+		            onDelete="CASCADE"
+		            onUpdate="RESTRICT" />
+		</changeSet>				
+</databaseChangeLog>
+

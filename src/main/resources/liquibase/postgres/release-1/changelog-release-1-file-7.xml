@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    <changeSet id="19" author="eugene" context="postgres">        
+        <comment>Creating auth_role_module_level_dict table</comment>
+        
+        <createTable tableName="auth_role_module_level_dict" schemaName="auth">
+            <column name="id" type="number">
+                <constraints nullable="false"/>
+            </column>
+                        
+            <column name="id_role" type="number">
+                <constraints nullable="false"/>
+            </column>        
+            
+            <column name="id_module" type="number">
+                <constraints nullable="false"/>
+            </column>                                         
+
+            <column name="id_level" type="number">
+                <constraints nullable="true"/>
+            </column>
+            
+            <column name="id_dict" type="number">
+                <constraints nullable="false"/>
+            </column>   
+            
+            <column name="access_type" type="number">
+                <constraints nullable="false"/>
+            </column>                                                            
+        </createTable>
+        
+    </changeSet>
+
+	<changeSet id="20" author="eugene" context="postgres"> 
+	    <comment>Creating primary key for auth_role_module_level_dict table</comment>
+	    <addPrimaryKey 
+	            columnNames="id"
+	            constraintName="pk_auth_role_module_level_dict"
+	            schemaName="auth"
+	            tableName="auth_role_module_level_dict"/>
+	</changeSet>
+</databaseChangeLog>

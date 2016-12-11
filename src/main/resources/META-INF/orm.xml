@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+
+	<entity class="kz.ecc.isbp.admin.auth.entity.User">
+		<table name="auth_users" schema="auth"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="auth_users_gen" />
+        		<sequence-generator
+        			name="auth_users_gen"
+        			sequence-name="auth.auth_users_s"
+					schema="auth"
+					allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="iin">
+      			<column name="iin" />
+      		</basic>
+
+      		<basic name="surname">
+      			<column name="surname" />
+      		</basic>
+
+      		<basic name="name">
+      			<column name="name" />
+      		</basic>
+
+      		<basic name="patronymic">
+      			<column name="patronymic" />
+      		</basic>
+
+      		<basic name="bin">
+      			<column name="bin" />
+      		</basic>
+
+      		<basic name="phoneNumber">
+      			<column name="phone_number" />
+      		</basic>
+
+      		<basic name="email">
+      			<column name="email" />
+      		</basic>
+
+      		<basic name="isDirector">
+      			<column name="is_director" />
+      		</basic>
+
+      		<basic name="isArchive">
+      			<column name="is_archive" />
+      		</basic>
+
+      		<basic name="isDisabled">
+      			<column name="is_disabled" />
+      		</basic>
+
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+      		<basic name="updateDate">
+      			<column name="update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+			<many-to-one name="orgStruct">
+				<join-column name="id_org_struct"/>
+			</many-to-one>
+
+			<many-to-many name="roleModules" fetch="LAZY">
+                <join-table name="auth_user_roles_rel" schema="auth">
+                    <join-column name="id_user"/>
+                    <inverse-join-column name="id_role_module_level"/>
+                </join-table>
+            </many-to-many>
+
+			<many-to-many name="modules" fetch="LAZY">
+                <join-table name="auth_user_modules_rel" schema="auth">
+                    <join-column name="id_user"/>
+                    <inverse-join-column name="id_module"/>
+                </join-table>
+            </many-to-many>
+
+			<many-to-many name="roleModuleDicts" fetch="LAZY">
+                <join-table name="auth_user_dicts_rel" schema="auth">
+                    <join-column name="id_user"/>
+                    <inverse-join-column name="id_role_module_level_dict"/>
+                </join-table>
+            </many-to-many>
+
+		</attributes>
+	</entity>
+
+	<entity class="kz.ecc.isbp.admin.auth.entity.Role">
+		<table name="auth_roles" schema="auth"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="auth_roles_gen" />
+        		<sequence-generator
+        			name="auth_roles_gen"
+        			sequence-name="auth.auth_roles_s"
+        			allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+
+      		<basic name="code">
+      			<column name="code" />
+      		</basic>
+
+      		<basic name="isArchive">
+      			<column name="is_archive" />
+      		</basic>
+
+      		<basic name="isDisabled">
+      			<column name="is_disabled" />
+      		</basic>
+
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+      		<basic name="updateDate">
+      			<column name="update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+			<many-to-many name="permissions" fetch="LAZY">
+                <join-table name="auth_role_permissions_rel" schema="auth">
+                    <join-column name="id_role"/>
+                    <inverse-join-column name="id_permission"/>
+                </join-table>
+            </many-to-many>
+		</attributes>
+	</entity>
+
+
+	<entity class="kz.ecc.isbp.admin.auth.entity.Permission">
+		<table name="auth_permissions" schema="auth"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="auth_permission_gen" />
+        		<sequence-generator
+        			name="auth_permission_gen"
+        			sequence-name="auth.auth_permissions_s"
+        			allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+
+      		<basic name="code">
+      			<column name="code" />
+      		</basic>
+
+      		<basic name="isArchive">
+      			<column name="is_archive" />
+      		</basic>
+
+      		<basic name="isDisabled">
+      			<column name="is_disabled" />
+      		</basic>
+
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+      		<basic name="updateDate">
+      			<column name="update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+      		<many-to-many name="roles" mapped-by="permissions" fetch="LAZY" />
+      	</attributes>
+	</entity>
+
+
+	<entity class="kz.ecc.isbp.admin.nsi.entity.OrgStruct">
+		<table name="nsi_dict_org_struct" schema="nsi" />
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="nsi_org_struct_gen" />
+        		<sequence-generator
+        			name="nsi_org_struct_gen"
+        			sequence-name="nsi.nsi_dict_org_struct_s"
+					schema="nsi"
+        			allocation-size="1"
+        		/>
+      		</id>
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+      		<basic name="updateDate">
+      			<column name="last_update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+      	</attributes>
+	</entity>
+
+	<entity class="kz.ecc.isbp.admin.fnd.entity.Module">
+		<table name="fnd_modules" schema="fnd"/>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="fnd_modules_gen" />
+        		<sequence-generator
+        			name="fnd_modules_gen"
+        			sequence-name="fnd.fnd_modules_s"
+        			allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+      		<basic name="code">
+      			<column name="code" />
+      		</basic>
+      		<basic name="isArchive">
+      			<column name="is_archive" />
+      		</basic>
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+      		<basic name="updateDate">
+      			<column name="update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+			<many-to-many name="users" mapped-by="modules"/>
+
+      		<transient name="isGranted" />
+      	</attributes>
+	</entity>
+
+	<entity class="kz.ecc.isbp.admin.fnd.entity.Dict">
+		<table name="fnd_dicts" schema="fnd"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="fnd_dicts_gen" />
+        		<sequence-generator
+        			name="fnd_dicts_gen"
+        			sequence-name="fnd.fnd_dicts_s"
+        			allocation-size="1"
+        		/>
+      		</id>
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+      		<basic name="code">
+      			<column name="code" />
+      		</basic>
+      		<basic name="type">
+      			<column name="dict_type" />
+      		</basic>
+      		<basic name="isArchive">
+      			<column name="is_archive" />
+      		</basic>
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+      		<basic name="updateDate">
+      			<column name="update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+      	</attributes>
+	</entity>
+
+
+	<entity class="kz.ecc.isbp.admin.auth.entity.RoleModuleDict">
+		<table name="auth_role_module_level_dict" schema="auth"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="auth_role_module_level_dict_gen" />
+        		<sequence-generator
+        			name="auth_role_module_level_dict_gen"
+        			sequence-name="auth.auth_role_module_level_dict_s"
+					schema="auth"
+					allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="levelId">
+      			<column name="id_level" />
+      		</basic>
+
+      		<basic name="accessType">
+      			<column name="access_type" />
+      		</basic>
+
+			<many-to-one name="role">
+				<join-column name="id_role"/>
+			</many-to-one>
+
+			<many-to-one name="module">
+				<join-column name="id_module"/>
+			</many-to-one>
+
+			<many-to-one name="dict">
+				<join-column name="id_dict"/>
+			</many-to-one>
+
+			<many-to-many name="users" mapped-by="roleModuleDicts" fetch="LAZY" />
+
+      		<transient name="isViewGranted" />
+      		<transient name="isEditGranted" />
+      	</attributes>
+	</entity>
+
+
+	<entity class="kz.ecc.isbp.admin.auth.entity.RoleModule">
+		<table name="auth_role_module_level" schema="auth"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="auth_role_module_level_gen" />
+        		<sequence-generator
+        			name="auth_role_module_level_gen"
+        			sequence-name="auth.auth_role_module_level_s"
+					schema="auth"
+					allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="levelId">
+      			<column name="id_level" />
+      		</basic>
+
+			<many-to-one name="role">
+				<join-column name="id_role"/>
+			</many-to-one>
+
+			<many-to-one name="module">
+				<join-column name="id_module"/>
+			</many-to-one>
+
+			<many-to-many name="users" mapped-by="roleModules" fetch="LAZY" />
+
+      		<transient name="isGranted" />
+      		<transient name="levelNameRu" />
+      		<transient name="levelNameKz" />
+      	</attributes>
+	</entity>
+
+	<entity class="kz.ecc.isbp.admin.emf.entity.BudgetType">
+		<table name="emf_budget_type" schema="emf"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="emf_budget_type_gen" />
+        		<sequence-generator
+        			name="emf_budget_type_gen"
+        			sequence-name="emf.emf_budget_type_s"
+					schema="emf"
+					allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+      	</attributes>
+	</entity>
+
+
+	<entity class="kz.ecc.isbp.admin.emf.entity.BudgetLevel">
+		<table name="emf_budget_level" schema="emf"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="emf_budget_level_gen" />
+        		<sequence-generator
+        			name="emf_budget_level_gen"
+        			sequence-name="emf.emf_budget_level_s"
+        			allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+      	</attributes>
+	</entity>
+
+	<entity class="kz.ecc.isbp.admin.nsi.entity.FinYear">
+		<table name="nsi_dict_fin_year" schema="nsi"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="nsi_dict_fin_year_gen" />
+        		<sequence-generator
+        			name="nsi_dict_fin_year_gen"
+        			sequence-name="nsi.nsi_dict_fin_year_s"
+        			allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="year">
+      			<column name="year" />
+      		</basic>
+
+      		<basic name="beginDate">
+      			<column name="begin_date" />
+      			<temporal>DATE</temporal>
+      		</basic>
+
+      		<basic name="endDate">
+      			<column name="end_date" />
+      			<temporal>DATE</temporal>
+      		</basic>
+
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+      		<basic name="updateDate">
+      			<column name="last_update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+			<many-to-one name="createdBy">
+				<join-column name="create_by"/>
+			</many-to-one>
+
+			<many-to-one name="updatedBy">
+				<join-column name="last_update_by"/>
+			</many-to-one>
+      	</attributes>
+	</entity>
+
+	<entity class="kz.ecc.isbp.admin.nsi.entity.BudgetVerStatus">
+		<table name="nsi_dict_budget_ver_status" schema="nsi"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="nsi_dict_budget_ver_status_gen" />
+        		<sequence-generator
+        			name="nsi_dict_budget_ver_status_gen"
+        			sequence-name="nsi.nsi_dict_budget_ver_status_s"
+        			allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+
+      		<basic name="code">
+      			<column name="code" />
+      		</basic>
+
+      		<basic name="beginDate">
+      			<column name="begin_date" />
+      			<temporal>DATE</temporal>
+      		</basic>
+
+      		<basic name="endDate">
+      			<column name="end_date" />
+      			<temporal>DATE</temporal>
+      		</basic>
+
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+      		<basic name="updateDate">
+      			<column name="last_update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+			<many-to-one name="createdBy">
+				<join-column name="create_by"/>
+			</many-to-one>
+
+			<many-to-one name="updatedBy">
+				<join-column name="last_update_by"/>
+			</many-to-one>
+      	</attributes>
+	</entity>
+
+	<entity class="kz.ecc.isbp.admin.nsi.entity.BudgetRequestType">
+		<table name="nsi_dict_budget_request_type" schema="nsi"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="nsi_dict_budget_request_type_gen" />
+        		<sequence-generator
+        			name="nsi_dict_budget_request_type_gen"
+        			sequence-name="nsi.nsi_dict_budget_request_type_s"
+        			allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+
+      		<basic name="code">
+      			<column name="code" />
+      		</basic>
+
+      		<basic name="beginDate">
+      			<column name="begin_date" />
+      			<temporal>DATE</temporal>
+      		</basic>
+
+      		<basic name="endDate">
+      			<column name="end_date" />
+      			<temporal>DATE</temporal>
+      		</basic>
+
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+      		<basic name="updateDate">
+      			<column name="last_update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+			<many-to-one name="createdBy">
+				<join-column name="create_by"/>
+			</many-to-one>
+
+			<many-to-one name="updatedBy">
+				<join-column name="last_update_by"/>
+			</many-to-one>
+      	</attributes>
+	</entity>
+
+	<entity class="kz.ecc.isbp.admin.nsi.entity.BudgetVer">
+		<table name="nsi_dict_budget_ver" schema="nsi"></table>
+		<attributes>
+			<id name="id">
+        		<generated-value strategy="SEQUENCE" generator="nsi_dict_budget_ver_gen" />
+        		<sequence-generator
+        			name="nsi_dict_budget_ver_gen"
+        			sequence-name="nsi.nsi_dict_budget_ver_s"
+        			allocation-size="1"
+        		/>
+      		</id>
+
+      		<basic name="nameRu">
+      			<column name="name_ru" />
+      		</basic>
+
+      		<basic name="nameKz">
+      			<column name="name_kz" />
+      		</basic>
+
+      		<basic name="shortNameRu">
+      			<column name="short_name_ru" />
+      		</basic>
+
+      		<basic name="shortNameKz">
+      			<column name="short_name_kz" />
+      		</basic>
+
+      		<basic name="beginDate">
+      			<column name="begin_date" />
+      			<temporal>DATE</temporal>
+      		</basic>
+
+      		<basic name="endDate">
+      			<column name="end_date" />
+      			<temporal>DATE</temporal>
+      		</basic>
+
+      		<basic name="createDate">
+      			<column name="create_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+      		<basic name="updateDate">
+      			<column name="last_update_date" />
+      			<temporal>TIMESTAMP</temporal>
+      		</basic>
+
+			<many-to-one name="beginFinYear">
+				<join-column name="begin_year_id"/>
+			</many-to-one>
+
+			<many-to-one name="endFinYear">
+				<join-column name="end_year_id"/>
+			</many-to-one>
+
+			<many-to-one name="budgetVerStatus">
+				<join-column name="status_id"/>
+			</many-to-one>
+
+			<many-to-one name="budgetType">
+				<join-column name="budget_type_id"/>
+			</many-to-one>
+
+			<many-to-one name="budgetRequestType">
+				<join-column name="budget_request_type_id"/>
+			</many-to-one>
+
+			<many-to-one name="parent">
+				<join-column name="parent_id"/>
+			</many-to-one>
+
+			<many-to-one name="createdBy">
+				<join-column name="create_by"/>
+			</many-to-one>
+
+			<many-to-one name="updatedBy">
+				<join-column name="last_update_by"/>
+			</many-to-one>
+      	</attributes>
+	</entity>
+</entity-mappings>

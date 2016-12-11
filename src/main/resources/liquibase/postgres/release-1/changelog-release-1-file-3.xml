@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    <changeSet id="7" author="eugene" context="postgres">        
+        <comment>Creating nsi_dict_org_struct table</comment>
+        <createTable tableName="nsi_dict_org_struct" schemaName="nsi">            
+            <column name="id" type="number">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="name_ru" type="varchar(400)">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="name_kz" type="varchar(400)">
+                <constraints nullable="false"/>
+            </column>
+                                            
+            <column name="shortname_ru" type="varchar(50)" />
+            <column name="shortname_kz" type="varchar(50)" />
+            <column name="level" type="number" />
+            <column name="parent" type="number" />
+            <column name="gu_id" type="number" />            
+            <column name="abp_id" type="number" />
+            <column name="begin_date" type="date" />
+            <column name="end_date" type="date" />
+            <column name="create_date" type="date" />
+            <column name="last_update_date" type="date" />
+            <column name="create_by" type="number" />
+            <column name="last_update_by" type="number" />
+        </createTable>
+    </changeSet>
+
+	<changeSet id="8" author="eugene" context="postgres"> 
+	    <comment>Creating primary key for nsi_dict_org_struct table</comment>
+	    <addPrimaryKey 
+	            columnNames="id"
+	            constraintName="pk_nsi_dict_org_struct"
+	            schemaName="nsi"
+	            tableName="nsi_dict_org_struct"/>
+	</changeSet>
+	
+	<changeSet id="9" author="eugene" context="postgres">
+		<comment>Load demo data to nsi_dict_org_struct table</comment>
+	    <loadData
+	            encoding="UTF-8"
+	            file="/src/main/resources/liquibase/postgres/release-1/data/nsi_dict_org_structs.csv"
+	            quotchar="'"
+	            schemaName="nsi"
+	            separator=";"
+	            tableName="nsi_dict_org_struct">
+	        
+	        <column name="id" type="NUMERIC"/>
+	        <column name="name_ru" type="STRING"/>
+	        <column name="name_kz" type="STRING"/>
+	        <column name="shortname_ru" type="STRING"/>
+	        <column name="shortname_kz" type="STRING"/>
+	        <column name="level" type="NUMERIC"/>
+	        <column name="parent" type="NUMERIC"/>
+	        <column name="gu_id" type="NUMERIC"/>
+	        <column name="abp_id" type="NUMERIC"/>
+	        <column name="begin_date" type="DATE"/>
+	        <column name="end_date" type="DATE"/>
+	        <column name="create_date" type="DATE"/>
+	        <column name="last_update_date" type="DATE"/>
+	    </loadData>
+		
+		<rollback>
+        	<delete schemaName="nsi" tableName="nsi_dict_org_struct" />
+        </rollback>	
+	</changeSet>
+</databaseChangeLog>

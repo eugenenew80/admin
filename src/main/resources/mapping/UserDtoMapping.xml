@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+  <mapping>
+    <class-a>kz.ecc.isbp.admin.auth.entity.User</class-a>
+    <class-b>kz.ecc.isbp.admin.auth.dto.UserDto</class-b>
+
+      <field>
+        <a>orgStruct.id</a>
+        <b>orgStructId</b>
+      </field>
+      <field>
+        <a>orgStruct.nameRu</a>
+        <b>orgStructNameRu</b>
+      </field>
+      <field>
+        <a>orgStruct.nameKz</a>
+        <b>orgStructNameKz</b>
+      </field>
+
+  </mapping>  
+</mappings> 

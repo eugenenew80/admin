@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    <changeSet id="0.1" author="eugene" context="postgres">        
+	    <sql dbms="postgresql" endDelimiter=";">
+	        CREATE SCHEMA fnd
+	    </sql>    
+	    
+		<rollback>
+		    <sql dbms="postgresql" endDelimiter=";">
+		        DROP SCHEMA fnd
+		    </sql>    
+        </rollback>	
+    </changeSet>
+
+    <changeSet id="0.2" author="eugene" context="postgres">        
+	    <sql dbms="postgresql" endDelimiter=";">
+	        CREATE SCHEMA auth
+	    </sql>   
+	     
+		<rollback>
+		    <sql dbms="postgresql" endDelimiter=";">
+		        DROP SCHEMA auth
+		    </sql>    
+        </rollback>	
+    </changeSet>
+
+    <changeSet id="0.3" author="eugene" context="postgres">        
+	    <sql dbms="postgresql" endDelimiter=";">
+	        CREATE SCHEMA nsi
+	    </sql>    
+	    
+		<rollback>
+		    <sql dbms="postgresql" endDelimiter=";">
+		        DROP SCHEMA nsi
+		    </sql>    
+        </rollback>	
+    </changeSet>
+
+    <changeSet id="0.4" author="eugene" context="postgres">        
+	    <sql dbms="postgresql" endDelimiter=";">
+	        CREATE SCHEMA emf
+	    </sql>    
+	    
+		<rollback>
+		    <sql dbms="postgresql" endDelimiter=";">
+		        DROP SCHEMA emf
+		    </sql>    
+        </rollback>	
+    </changeSet>
+</databaseChangeLog>

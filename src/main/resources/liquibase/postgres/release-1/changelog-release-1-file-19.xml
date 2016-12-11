@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    
+    <changeSet id="73" author="eugene" context="postgres">        
+        <comment>Creating nsi_dict_budget_ver table</comment>
+        <createTable tableName="nsi_dict_budget_ver" schemaName="nsi">            
+            <column name="id" type="number">
+                <constraints nullable="false"/>
+            </column>
+            
+            <column name="name_kz" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="name_ru" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="short_name_kz" type="varchar(50)" />
+            <column name="short_name_ru" type="varchar(50)" />
+
+            <column name="begin_year_id" type="number">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="end_year_id" type="number">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="parent_id" type="number"/>
+
+            <column name="begin_date" type="date">
+                <constraints nullable="false"/>
+            </column>   
+                       
+            <column name="end_date" type="date">
+                <constraints nullable="false"/>
+            </column>   
+
+            <column name="status_id" type="number" />
+			<column name="budget_type_id" type="number" />
+			<column name="budget_request_type_id" type="number" />
+			<column name="is_ebk" type="varchar(1)" />
+			
+            <column name="create_date" type="date" />
+            <column name="last_update_date" type="date" />
+            <column name="create_by" type="number" />
+            <column name="last_update_by" type="number" />
+        </createTable>
+    </changeSet>
+
+	<changeSet id="74" author="eugene" context="postgres"> 
+	    <comment>Creating primary key for nsi_dict_budget_ver table</comment>
+	    <addPrimaryKey 
+	            columnNames="id"
+	            constraintName="pk_nsi_dict_budget_ver"
+	            schemaName="nsi"
+	            tableName="nsi_dict_budget_ver"/>
+	</changeSet>
+	
+	<changeSet id="75" author="eugene" context="postgres">
+		<comment>Load demo data to nsi_dict_budget_ver table</comment>
+	    <loadData
+	            encoding="UTF-8"
+	            file="/src/main/resources/liquibase/postgres/release-1/data/nsi_dict_budget_vers.csv"
+	            quotchar="'"
+	            schemaName="nsi"
+	            separator=";"
+	            tableName="nsi_dict_budget_ver">
+	        
+	        <column name="id" type="NUMERIC"/>
+	        <column name="name_kz" type="STRING"/>
+	        <column name="name_ru" type="STRING"/>
+	        <column name="short_name_kz" type="STRING"/>
+	        <column name="short_name_ru" type="STRING"/>	        
+	        <column name="begin_year_id" type="NUMERIC"/>
+	        <column name="end_year_id" type="NUMERIC"/>
+	        <column name="begin_date" type="DATE"/>
+	        <column name="end_date" type="DATE"/>	        
+	        <column name="parent_id" type="NUMERIC"/>
+	        <column name="status_id" type="NUMERIC"/>
+	        <column name="budget_type_id" type="NUMERIC"/>
+	        <column name="budget_request_type_id" type="NUMERIC"/>	        
+	        <column name="create_date" type="DATE"/>
+	        <column name="last_update_date" type="DATE"/>
+	    </loadData>
+		
+		<rollback>
+        	<delete schemaName="nsi" tableName="nsi_dict_budget_ver" />
+        </rollback>	
+	</changeSet>
+	
+	<changeSet id="76" author="eugene" context="postgres">
+	    <comment>Creating sequence for nsi_dict_budget_ver table</comment>
+	    <createSequence 
+	            incrementBy="1"
+	            schemaName="nsi"
+	            sequenceName="nsi_dict_budget_ver_s"
+	            startValue="3"/>
+	</changeSet>
+	
+	
+	<changeSet id="77" author="eugene" context="postgres">
+	    <comment>Add foreign key for nsi_dict_budget_ver to nsi_dict_budget_request_type</comment>
+	    <addForeignKeyConstraint 
+	    		baseColumnNames="budget_request_type_id"
+	            baseTableName="nsi_dict_budget_ver"
+	            baseTableSchemaName="nsi"
+
+	            referencedColumnNames="id"
+	            referencedTableName="nsi_dict_budget_request_type" 
+	            referencedTableSchemaName="nsi" 
+	            
+	            constraintName="fk_budget_ver_budget_request_type"
+	            onDelete="RESTRICT"
+	            onUpdate="RESTRICT"/>
+	</changeSet>
+
+	<changeSet id="78" author="eugene" context="postgres">
+	    <comment>Add foreign key for nsi_dict_budget_ver to nsi_dict_budget_ver_status</comment>
+	    <addForeignKeyConstraint 
+	    		baseColumnNames="status_id"
+	            baseTableName="nsi_dict_budget_ver"
+	            baseTableSchemaName="nsi"
+
+	            referencedColumnNames="id"
+	            referencedTableName="nsi_dict_budget_ver_status" 
+	            referencedTableSchemaName="nsi" 
+	            
+	            constraintName="fk_budget_ver_budget_ver_status"
+	            onDelete="RESTRICT"
+	            onUpdate="RESTRICT"/>
+	</changeSet>
+	
+	<changeSet id="79" author="eugene" context="postgres">
+	    <comment>Add foreign key for nsi_dict_budget_ver to emf_budget_type</comment>
+	    <addForeignKeyConstraint 
+	    		baseColumnNames="budget_type_id"
+	            baseTableName="nsi_dict_budget_ver"
+	            baseTableSchemaName="nsi"
+
+	            referencedColumnNames="id"
+	            referencedTableName="emf_budget_type" 
+	            referencedTableSchemaName="emf" 
+	            
+	            constraintName="fk_budget_ver_budget_type"
+	            onDelete="RESTRICT"
+	            onUpdate="RESTRICT"/>
+	</changeSet>
+						
+</databaseChangeLog>

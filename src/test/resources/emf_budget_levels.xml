@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<emf_budget_level id="1" name_ru="Уровень бюджета 1" name_kz="Уровень бюджета 1" create_date="2016-12-31" last_update_date="2016-12-31" />
+	<emf_budget_level id="2" name_ru="Уровень бюджета 2" name_kz="Уровень бюджета 2" create_date="2016-12-31" last_update_date="2016-12-31" />
+</dataset>
