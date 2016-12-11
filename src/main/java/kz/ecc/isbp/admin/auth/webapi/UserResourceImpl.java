@@ -271,7 +271,7 @@ public class UserResourceImpl {
 								it.getLevelId().equals(roleModule.getLevelId())
 							)							
 							.forEach(roleModuleDict -> permissionListDto.add(new UserPermissionDto(user, module, roleModule, roleModuleDict)) );
-				});;
+				});
 		});
 		
 		return Response.ok()
