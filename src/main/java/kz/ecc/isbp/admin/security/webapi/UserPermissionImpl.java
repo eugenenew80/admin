@@ -13,13 +13,11 @@ import org.bson.Document;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 
-
 @RequestScoped
 @Path("/userPermissions")
 @Produces({"application/json;charset=utf-8", "application/xml;charset=utf-8"})
 @Consumes({"application/json;charset=utf-8", "application/xml;charset=utf-8"})
 public class UserPermissionImpl {
-
 	@GET
 	public Response getAll() {
 		try(MongoClient mongoClient = new MongoClient()) {
