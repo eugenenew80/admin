@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-
 public class DefaultQueryImpl implements Query {
 	private final String where;
 	private final Map<String, Object> params;
@@ -17,8 +16,7 @@ public class DefaultQueryImpl implements Query {
 	public Map<String, Object> params() {
 		return Collections.unmodifiableMap(params);
 	}
-	
-	
+
 	private DefaultQueryImpl(Map<String, Object> fields) {
 		where = fields.keySet().stream()
 			.map( key -> "t." + key  + (fields.get(key) instanceof String ? " like " : " = ")  + ":" + key.replace(".", "_"))
