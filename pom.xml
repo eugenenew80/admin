@@ -203,6 +203,14 @@
         <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${version.surefire.plugin}</version>
+                <configuration>
+                    <skip>${maven-surefire-skip}</skip>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>${version.war.plugin}</version>
                 <configuration>
@@ -259,19 +267,9 @@
                 <wildfly-port>9990</wildfly-port>
                 <wildfly-username>admin</wildfly-username>
                 <wildfly-password>1</wildfly-password>
-            </properties>
 
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${version.surefire.plugin}</version>
-                        <configuration>
-                            <skip>false</skip>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+                <maven-surefire-skip>true</maven-surefire-skip>
+            </properties>
         </profile>
 
         <profile>
@@ -282,10 +280,12 @@
                 <username>postgres</username>
                 <password>1</password>
 
-                <wildfly-hostname>isbp-test</wildfly-hostname>
+                <wildfly-hostname>localhost</wildfly-hostname>
                 <wildfly-port>9990</wildfly-port>
                 <wildfly-username>admin</wildfly-username>
                 <wildfly-password>1</wildfly-password>
+
+                <maven-surefire-skip>false</maven-surefire-skip>
             </properties>
         </profile>
 
@@ -301,6 +301,8 @@
                 <wildfly-port>9990</wildfly-port>
                 <wildfly-username>admin</wildfly-username>
                 <wildfly-password>1</wildfly-password>
+
+                <maven-surefire-skip>true</maven-surefire-skip>
             </properties>
         </profile>
 
