@@ -37,7 +37,6 @@ public class SetupMongo {
 		docs.add(document);
 		
 		collection.insertMany(docs);
-		
 		mongoClient.close();
 	}
 }
