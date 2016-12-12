@@ -282,7 +282,7 @@
                 <username>postgres</username>
                 <password>1</password>
 
-                <wildfly-hostname>localhost</wildfly-hostname>
+                <wildfly-hostname>isbp-test</wildfly-hostname>
                 <wildfly-port>9990</wildfly-port>
                 <wildfly-username>admin</wildfly-username>
                 <wildfly-password>1</wildfly-password>
@@ -297,7 +297,7 @@
                 <username>postgres</username>
                 <password>1</password>
 
-                <wildfly-hostname>remotehost</wildfly-hostname>
+                <wildfly-hostname>isbp-prod</wildfly-hostname>
                 <wildfly-port>9990</wildfly-port>
                 <wildfly-username>admin</wildfly-username>
                 <wildfly-password>1</wildfly-password>
