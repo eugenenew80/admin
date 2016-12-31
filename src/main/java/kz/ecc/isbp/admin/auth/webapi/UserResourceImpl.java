@@ -24,7 +24,7 @@ import static kz.ecc.isbp.admin.common.dto.mapper.Mapper.*;
 public class UserResourceImpl {
 	
 	@GET
-	public Response findAll(@QueryParam("departmentId") Long departmentId, @QueryParam("surname") String surname, @QueryParam("name") String name, @QueryParam("iin") String iin) {
+	public Response findAll(@QueryParam("orgStructId") Long departmentId, @QueryParam("surname") String surname, @QueryParam("name") String name, @QueryParam("iin") String iin) {
 		Query query = queryBuilder
 			.setParameter("orgStruct.id", departmentId)
 			.setParameter("surname", surname)
