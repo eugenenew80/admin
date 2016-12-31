@@ -1,11 +1,12 @@
 package kz.ecc.isbp.admin.helper;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import org.hibernate.Session;
+import org.hibernate.internal.SessionImpl;
 
 import kz.ecc.isbp.admin.auth.entity.Permission;
 import kz.ecc.isbp.admin.auth.entity.Role;
@@ -29,7 +30,9 @@ public class DBUnitHelper {
 	public DBUnitHelper() throws Exception {
 		entityManagerFactory = Persistence.createEntityManagerFactory("isbp_test"); 
 		em = entityManagerFactory.createEntityManager();
-		connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test?user=postgres&password=1");
+		Session session = em.unwrap(Session.class);
+		connection = ((SessionImpl) session).connection();
+		//connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/isbp_test?user=postgres&password=1");
 	}
 	
 	public EntityManager getEntityManager() {

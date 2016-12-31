@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
+//import javax.ejb.Singleton;
+//import javax.ejb.Startup;
 
 import org.bson.Document;
 
@@ -14,8 +14,8 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
-@Singleton
-@Startup
+//@Singleton
+//@Startup
 public class SetupMongo {
 	
 	@PostConstruct

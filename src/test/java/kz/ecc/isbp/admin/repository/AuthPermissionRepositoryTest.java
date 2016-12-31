@@ -30,7 +30,7 @@ public class AuthPermissionRepositoryTest {
 	@BeforeClass
 	public static void setUpClass() throws Exception {
 		dbUnitHelper = new DBUnitHelper(); 
-		permissionRepository = new PermissionRepositoryImpl(dbUnitHelper.getEntityManager());;
+		permissionRepository = new PermissionRepositoryImpl(dbUnitHelper.getEntityManager());
 	}
 		
 	@AfterClass

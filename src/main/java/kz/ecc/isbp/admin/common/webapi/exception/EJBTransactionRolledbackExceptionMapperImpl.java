@@ -23,11 +23,11 @@ public class EJBTransactionRolledbackExceptionMapperImpl implements ExceptionMap
     			
     	String message = cause.getMessage();
 
-    	if (cause instanceof ConstraintViolationException) 
+    	if (cause instanceof ConstraintViolationException) {
     		message = "Bean validation exception: ";
-    		for (ConstraintViolation<?> v: ((ConstraintViolationException) cause).getConstraintViolations()) { 
+    		for (ConstraintViolation<?> v: ((ConstraintViolationException) cause).getConstraintViolations())  
 	    		message += v.getPropertyPath() + ": " +v.getMessage() + "; ";    	
-    		}
+    	}
     	
     	if (message==null || message.equals(""))
     		message = exc.getClass().getName();

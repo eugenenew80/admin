@@ -1,6 +1,5 @@
 package kz.ecc.isbp.admin.auth.entity;
 
-import java.time.LocalDate;
 import java.util.*;
 import javax.persistence.*;
 import kz.ecc.isbp.admin.common.entity.ability.*;

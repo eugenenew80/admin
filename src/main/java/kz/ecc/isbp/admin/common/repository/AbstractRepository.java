@@ -4,7 +4,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-
 import kz.ecc.isbp.admin.common.entity.ability.HasId;
 
 public abstract class AbstractRepository<T extends HasId> implements Repository<T> {
@@ -16,9 +15,11 @@ public abstract class AbstractRepository<T extends HasId> implements Repository<
 
 
 	public List<T> select(Query query) {
-    	TypedQuery<T> typedQuery = getEntityManager().createQuery("select t from " + clazz.getSimpleName() + " t" + " where " + query.where(), clazz);
-    	query.params().keySet().stream()
-    			.forEach(it -> typedQuery.setParameter(it, query.params().get(it)) );
+		String where = query.where().trim().length() > 0 ? " where " + query.where() : "";
+    	
+		TypedQuery<T> typedQuery = getEntityManager().createQuery("select t from " + clazz.getSimpleName() + " t" + where, clazz);
+    	query.params().keySet()
+            .forEach(it -> typedQuery.setParameter(it, query.params().get(it)) );
     	
     	return typedQuery.getResultList();
 	}
